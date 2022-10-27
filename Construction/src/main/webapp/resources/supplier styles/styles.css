@@ -1,0 +1,27 @@
+
+
+.table {
+    
+    overflow: scroll; /* Scrollbar are always visible */
+  overflow: auto;   /* Scrollbar is displayed as it's needed */
+  
+
+}
+
+table {
+    width: 200%;
+    text-align: left;
+    border-collapse: collapse;
+   
+    height: fit-content;
+}
+
+tr {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+td,
+th {
+    padding-block: 10px;
+}
+

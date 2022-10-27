@@ -1,0 +1,67 @@
+
+.inventory-dash div{
+	padding: 0;
+}
+
+
+.admin-option-column {
+	background-color: #e7f1f9;
+}
+
+.admin-logo img {
+	margin: 50px 0 30px;
+	width: 150px;
+	height: auto;
+}
+
+.admin-option {
+	width: 140px;
+	margin: auto;
+}
+
+.admin-option div {
+	font-size: 20px;
+	padding: 10px 0;
+	color: #9E9E9E;
+	font-weight: bold;
+}
+
+.sticky-top {
+	padding-bottom: 60px !important;
+}
+
+
+.admin-option div:hover {
+	color:  #0b3c5a;
+	cursor: pointer;
+}
+
+.admin-option i {
+	margin-right: 10px;
+}
+
+.dashboard-body-title {
+	color: #9E9E9E;
+	font-size: 30px;
+	font-weight: bold;
+	padding-top: 15px !important;
+	padding-bottom: 15px !important; 
+	border-bottom: 1px solid;
+	border-color: #BDBDBD;
+}
+
+@media only screen and (min-width: 768px) {
+	.dashboard-body-title {
+		padding-left: 100px !important;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	.dashboard-body-title {
+		text-align: center;
+	}
+}
+
+.dashboard-body-content {
+	padding: 15px 50px !important;
+}

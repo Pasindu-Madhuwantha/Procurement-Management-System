@@ -1,0 +1,80 @@
+@charset "ISO-8859-1";
+
+.insert-icon-btn {
+	color:  #0dc900;
+	font-size: 30px;
+	margin: 0;
+	cursor: pointer;
+}
+
+.insert-btn {
+	background-color: #0dc900;
+	color: white;
+}
+
+.insert-btn:hover {
+	background-color: #0db801;
+	color: white;
+	border-color: #0db801;
+}
+
+.close-btn {
+	background-color: #BDBDBD;
+	color: white;
+}
+
+.close-btn:hover {
+	background-color: #9E9E9E;
+	color: white;
+	border-color: #9a9a9a;
+}
+
+.modal-header, .modal-footer {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.modal-title {
+	color: #9E9E9E;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.modal button.close {
+	font-size: 30px ;
+	text-decoration: none;
+	background-color: white;
+	border: none;
+}
+
+.modal-body {
+	padding: 30px 30px 10px;
+}
+
+.modal-body div.row {
+	margin-bottom: 20px;
+}
+
+.modal-body .disabled-input {
+	background-color: #F5F5F5;
+	cursor: no-drop;
+	
+}
+
+label.imgUploadBtn {
+	font-weight: bold;
+	cursor: pointer;
+	color: #0b3c5a;
+	font-size: 17px;
+	border: 2px solid;
+	border-color: #0b3c5a;
+	padding: 5px 10px;
+	border-radius: 15px;
+}
+
+label.imgUploadBtn:hover {
+	background-color: #0b3c5a;
+	color: white;
+	transition: 0.3s;
+}
+

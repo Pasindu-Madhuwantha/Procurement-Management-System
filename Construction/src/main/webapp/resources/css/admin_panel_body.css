@@ -1,0 +1,48 @@
+
+.parent-body {
+	background-color: #e7f1f9;
+	padding: 0 !important;
+}
+
+.body-title {
+	color: #0b3c5a;
+	font-size: 30px;
+	font-weight: bold;
+	border-bottom: 2px solid;
+	border-color: #9E9E9E;
+	padding: 20px 0 20px;
+	background-color: white;
+}
+
+.body-panel-option {
+	background-color: white;
+}
+
+.func-body-frame {
+	margin: 50px 10px;
+	padding: 20px 30px;
+}
+
+.func-body-frame:hover {
+	border: 3px solid;
+	border-radius: 20px;
+	border-color: #0b3c5a;
+	transition-duration: 0.2s;
+	cursor: pointer;
+}
+
+.func-body-img {
+	height: 180px;
+}
+
+.func-body-img img {
+	width: 100% !important;
+	height: 180px;
+}
+
+.func-body-title {
+	color: #0b3c5a;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 10px 0 15px;
+}

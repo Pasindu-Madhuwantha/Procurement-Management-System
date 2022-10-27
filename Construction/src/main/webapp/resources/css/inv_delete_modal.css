@@ -1,0 +1,65 @@
+@charset "ISO-8859-1";
+
+
+.delete-btn {
+	background-color: #ec1515;
+	color: white;
+}
+
+.delete-btn:hover {
+	background-color: #ff0000;
+	color: white;
+	border-color: #ff0000;
+}
+
+.close-btn {
+	background-color: #BDBDBD;
+	color: white;
+}
+
+.close-btn:hover {
+	background-color: #9E9E9E;
+	color: white;
+	border-color: #9a9a9a;
+}
+
+.modal-header, .modal-footer {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.modal-title {
+	color: #9E9E9E;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.modal button.close {
+	font-size: 30px ;
+	text-decoration: none;
+	background-color: white;
+	border: none;
+}
+
+#deleteModal .modal-body {
+	padding: 30px 30px 30px;
+}
+
+#deleteModal .modal-body div.row {
+	margin-bottom: 0px;
+}
+
+#deleteModal i {
+	font-size: 60px;
+	color: red;
+}
+
+#deleteModal .delete-modal-msg {
+	font-size: 20px;
+	color: red;
+	font-weight: bold;
+}
+
+
+
+

@@ -1,0 +1,22 @@
+@charset "ISO-8859-1";
+
+
+div.margin-top {
+	margin-top: 30px !important;
+}
+
+.bold-head {
+	font-weight: bold;
+	margin-bottom: 3px;
+}
+
+div.progress {
+	margin-top: 8px;
+}
+
+div.sub-table {
+	font-weight: bold;
+	color: #0b3c5a;
+	text-decoration: underline;
+	margin-top: 50px !important; 	
+}

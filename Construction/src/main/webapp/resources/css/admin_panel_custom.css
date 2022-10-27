@@ -1,0 +1,43 @@
+
+
+/* ------------------------ Header CSS ------------------------ */
+.theme-bg-color {
+	background-color: #0b3c5a !important;
+}
+
+.nav-home-btn {
+	color: white;
+	font-weight: bold;
+	font-size: 25px;
+	border: 1px solid;
+	border-radius: 20px;
+	padding: 10px 40px;
+	transition-duration: 0.4s;
+}
+
+.nav-home-btn:hover {
+	background-color: white !important;
+	color: #0b3c5a;
+	border-color: white;
+}
+
+
+.online-icon {
+	background-color: white;
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+}
+
+.admin-title {
+	color: white;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+
+/* ------------------------ Footer CSS ------------------------ */
+
+.footer-title {
+	color: white;
+}

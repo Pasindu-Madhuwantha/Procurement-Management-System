@@ -1,0 +1,58 @@
+@charset "ISO-8859-1";
+
+.update-btn {
+	background-color: blue;
+	color: white;
+}
+
+.update-btn:hover {
+	background-color: #0d37ae;
+	color: white;
+	border-color: #0d37ae;
+}
+
+.close-btn {
+	background-color: #BDBDBD;
+	color: white;
+}
+
+.close-btn:hover {
+	background-color: #9E9E9E;
+	color: white;
+	border-color: #9a9a9a;
+}
+
+.modal-header, .modal-footer {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.modal-title {
+	color: #9E9E9E;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.modal button.close {
+	font-size: 30px ;
+	text-decoration: none;
+	background-color: white;
+	border: none;
+}
+
+.modal-body {
+	padding: 30px 30px 10px;
+}
+
+.modal-body div.row {
+	margin-bottom: 20px;
+}
+
+.img-collapse {
+	color: #757575;
+	cursor: pointer;
+	background-color:#F5F5F5;
+	border:  none;
+	border-radius: 7px;
+	padding: 3px 0 3px 12px;
+}
