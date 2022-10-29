@@ -9,4 +9,25 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
+  	<servlet>
+		<servlet-name>new-order</servlet-name>
+		<servlet-class>com.controller.OrderCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>new-order</servlet-name>
+		<url-pattern>/functions/order/new-order</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>get-order-by-id</servlet-name>
+		<servlet-class>com.controller.OrderCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>get-order-by-id</servlet-name>
+		<url-pattern>/functions/order/approve-req</url-pattern>
+	</servlet-mapping>
+  
+  
+  
 </web-app>

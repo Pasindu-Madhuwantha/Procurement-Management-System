@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+.pending-order {
+	margin-top: 20px !important;
+	border: 1px solid; 
+}
+
+.order-details {
+	padding-top: 20px !important;
+}

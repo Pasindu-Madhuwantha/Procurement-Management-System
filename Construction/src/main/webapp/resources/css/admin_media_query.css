@@ -1,0 +1,25 @@
+@charset "ISO-8859-1";
+
+@media only screen and (min-width: 576px) {
+
+	.media-flex {
+		flex-direction: row-reverse !important;
+	}
+
+}
+
+@media only screen and (max-width: 576px) {
+
+	.media-flex {
+		justify-content: center;
+	}
+
+	.home-btn-parent {
+		margin: 10px 0 30px;
+	}
+
+	.hide {
+		display: none !important;
+	}
+
+}
