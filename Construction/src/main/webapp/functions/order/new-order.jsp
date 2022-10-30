@@ -102,7 +102,7 @@
 					</div>
 
 					<div class="col-12 col-sm-4 d-flex justify-content-center justify-content-sm-start new-stock-btn">
-						<a href="newly-added-stock" class="notification">
+						<a href="./pending-orders.jsp" class="notification">
 							<span>View All Orders</span>
 							<!--span class="badge">3</span-->
 						</a>
@@ -248,7 +248,6 @@
 			  var k = document.getElementsByTagName("option")[x].getAttribute("data-matqty");
 			  var unitPrice = document.getElementsByTagName("option")[x].getAttribute("data-unit-price");
 			  
-			  console.log("Hello world!" + k);
 			  document.getElementById("material-qty").placeholder = "Available Quantity : " + k;
 			  document.getElementById("material-qty").max = k;
 			  
@@ -258,8 +257,6 @@
 				  document.getElementById("totAmount").value = totPrice + ".00";
 			  }
 			  
-			  
-			  
 			  if ( (document.getElementById("material-qty").value) <= k ) {
 				  document.getElementById("danger-alert").innerHTML = "You Can buy";
 			  } else {
@@ -267,8 +264,6 @@
 			  }
 			  
 		}
-		
-		
 	</script>
 	
 	

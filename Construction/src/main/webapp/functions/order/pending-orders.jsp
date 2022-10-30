@@ -38,7 +38,7 @@
 				</div>
 	
 				<div class="col-12 col-sm-3 d-flex align-items-center justify-content-center home-btn-parent">
-					<button type="button" class="nav-home-btn theme-bg-color" onclick="location.href='http://localhost:8090/Uptrend/functions/common/admin_panel.jsp'">Home</button>
+					<button type="button" class="nav-home-btn theme-bg-color" onclick="#">Home</button>
 				</div>
 	
 				<div class="col-12 col-sm-5 d-flex align-items-center media-flex hide">
@@ -102,7 +102,7 @@
 					</div>
 
 					<div class="col-12 col-sm-4 d-flex justify-content-center justify-content-sm-start new-stock-btn">
-						<a href="newly-added-stock" class="notification">
+						<a href="./new-order.jsp" class="notification">
 							<span>Place a Order</span>
 							<!--span class="badge">3</span-->
 						</a>
@@ -112,7 +112,7 @@
 				
 				<div class="navigation-btns mt-4">
 				
-					<button type="button" class="btn btn-info" onclick="myFunction(1)">All Orders</button>
+					<button type="button" class="btn btn-info" onclick="myFunction(1)">All Pending Orders</button>
 					<button type="button" class="btn btn-info" onclick="myFunction(2)">Approved Orders</button>
 					<button type="button" class="btn btn-info" onclick="myFunction(3)">Declined Orders</button>
 					
@@ -149,8 +149,8 @@
 							
 							<div class="col-md-3 order-action-btn d-flex align-items-center justify-content-center">
 								<button class="btn btn-success mr-2" type="submit"  data-toggle="modal" data-target="#approve-modal" onclick="location.href='approve-req?orderId=<%=rs.getString(1) %>'">Approve</button>
-						    	<button class="btn btn-danger mr-2" type="submit">Decline</button>
-						    	<button class="btn btn-secondary mr-4" type="submit">View Details</button>
+						    	<button class="btn btn-danger mr-2" type="submit" data-toggle="modal" data-target="#decline-modal" onclick="location.href='decline-req?orderId=<%=rs.getString(1) %>'">Decline</button>
+						    	<button class="btn btn-secondary mr-4" type="submit" data-toggle="modal" data-target="#view-modal" onclick="location.href='view-req?orderId=<%=rs.getString(1) %>'">View Details</button>
 							</div>
 						</div>
 					
@@ -357,10 +357,7 @@
 	      <div class="modal-body d-flex justify-content-center">
 	        
 			<!-- Modal Body -->
-			<form action="new-order" method="post" class="row col-md-10 needs-validation" novalidate>
-			
-				<c:forEach var="reqOrderRecord" items="${reqOrderRecord}">
-					
+			<form action="approve" method="post" class="row col-md-10 needs-validation" id="approve-form" novalidate>
 					
 					<div class="form-row col-md-12 d-flex align-items-center">
 					  	<div class="col-md-4">Order ID</div>
@@ -369,54 +366,214 @@
 					
 					<div class="form-row col-md-12 d-flex align-items-center">
 					  	<div class="col-md-4">Material</div>
-					  	<div class="col-md-8"><input type="text" class="form-control" id="material" name="material" required></div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="material" name="material" value="<c:out value="${reqOrderRecord.material}" />" required></div>
 				  	</div>
 				  	
 				  	<div class="form-row col-md-12 d-flex align-items-center">
 					  	<div class="col-md-4">Quantity</div>
-					  	<div class="col-md-8"><input type="number" class="form-control" id="material-qty" name="material-qty"  min="1" placeholder="" onchange="myFunction()" required></div>
+					  	<div class="col-md-8"><input type="number" class="form-control" id="material-qty" name="material-qty"  min="1" value="<c:out value="${reqOrderRecord.quantity}" />" placeholder="" onchange="myFunction()" required></div>
 				  	</div>
 				  	
 				  	<div class="form-row col-md-12 d-flex align-items-center">
 					  	<div class="col-md-4">Total Amount</div>
-					  	<div class="col-md-8"><input type="number" class="form-control" id="totAmount" name="totAmount" required></div>
+					  	<div class="col-md-8"><input type="number" class="form-control" id="totAmount" name="totAmount" value="<c:out value="${reqOrderRecord.totAmount}" />0" required></div>
 				  	</div>
 				  	
 				  	<div class="form-row col-md-12 d-flex align-items-center">
 					  	<div class="col-md-4">Site Name</div>
-					  	<div class="col-md-8"><input type="text" class="form-control" id="siteName" name="siteName" required></div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="siteName" name="siteName" value="<c:out value="${reqOrderRecord.siteName}" />" required></div>
 				  	</div>
 				  	
 				  	<div class="form-row col-md-12 d-flex align-items-center">
 					  	<div class="col-md-4">Site Address</div>
-					  	<div class="col-md-8"><input type="text" class="form-control" id="siteAddress" name="siteAddress" required></div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="siteAddress" name="siteAddress" value="<c:out value="${reqOrderRecord.siteAddress}" />" required></div>
 				  	</div>
 				  	
 				  	<div class="form-row col-md-12 d-flex align-items-center">
 					  	<div class="col-md-4">Order Date</div>
-					  	<div class="col-md-8"><input type="date" class="form-control" id="orderDate" name="orderDate" required></div>
+					  	<div class="col-md-8"><input type="date" class="form-control" id="orderDate" name="orderDate" value="<c:out value="${reqOrderRecord.orderDate}" />" required></div>
 				  	</div>
 				  	
 				  	<div class="form-row col-md-12 d-flex align-items-center">
 					  	<div class="col-md-4">Delivery Date</div>
-					  	<div class="col-md-8"><input type="date" class="form-control" id="deliveryDate" name="deliveryDate" required></div>
+					  	<div class="col-md-8"><input type="date" class="form-control" id="deliveryDate" name="deliveryDate" value="<c:out value="${reqOrderRecord.deliveryDate}" />" required></div>
 				  	</div>
-				
-				</c:forEach>		
 					  
 			</form>
-
-
+			
+			
 	      </div>
 	      <div class="modal-footer">
 	        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-success">Approve</button>
+	        <button type="submit" form="approve-form" class="btn btn-success">Approve</button>
 	      </div>
 	    </div>
 	  </div>
 	</div>
 	
 	
+	
+	<!-- Decline Modal -->
+	<div class="modal fade" id="decline-modal" tabindex="-1" role="dialog" aria-labelledby="decline-modal" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">DECLINE ORDER?</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body d-flex justify-content-center">
+	        
+			<!-- Modal Body -->
+			<form action="decline" id="decline-form" method="post" class="row col-md-10 needs-validation" novalidate>
+					
+					<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Order ID</div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="orderId" name="orderId" value="<c:out value="${reqDeclineOrderRecord.orderId}" />" required></div>
+				  	</div>
+					
+					<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Material</div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="material" name="material" value="<c:out value="${reqDeclineOrderRecord.material}" />" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Quantity</div>
+					  	<div class="col-md-8"><input type="number" class="form-control" id="material-qty" name="material-qty"  min="1" value="<c:out value="${reqDeclineOrderRecord.quantity}" />" placeholder="" onchange="myFunction()" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Total Amount</div>
+					  	<div class="col-md-8"><input type="number" class="form-control" id="totAmount" name="totAmount" value="<c:out value="${reqDeclineOrderRecord.totAmount}" />0" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Site Name</div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="siteName" name="siteName" value="<c:out value="${reqDeclineOrderRecord.siteName}" />" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Site Address</div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="siteAddress" name="siteAddress" value="<c:out value="${reqDeclineOrderRecord.siteAddress}" />" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Order Date</div>
+					  	<div class="col-md-8"><input type="date" class="form-control" id="orderDate" name="orderDate" value="<c:out value="${reqDeclineOrderRecord.orderDate}" />" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Delivery Date</div>
+					  	<div class="col-md-8"><input type="date" class="form-control" id="deliveryDate" name="deliveryDate" value="<c:out value="${reqDeclineOrderRecord.deliveryDate}" />" required></div>
+				  	</div>
+					  
+			</form>
+			
+			
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+	        <button type="submit" form="decline-form" class="btn btn-danger">Decline</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	
+	<!-- View Modal -->
+	<div class="modal fade" id="view-modal" tabindex="-1" role="dialog" aria-labelledby="view-modal" aria-hidden="true">
+	  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLongTitle">VIEW DETAILS</h5>
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="modal-body d-flex justify-content-center">
+	        
+			<!-- Modal Body -->
+			<form action="new-order" method="post" class="row col-md-10 needs-validation" novalidate>
+					
+					<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Order ID</div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="orderId" name="orderId" value="<c:out value="${viewRecord.orderId}" />" required></div>
+				  	</div>
+					
+					<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Material</div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="material" name="material" value="<c:out value="${viewRecord.material}" />" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Quantity</div>
+					  	<div class="col-md-8"><input type="number" class="form-control" id="material-qty" name="material-qty"  min="1" value="<c:out value="${viewRecord.quantity}" />" placeholder="" onchange="myFunction()" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Total Amount</div>
+					  	<div class="col-md-8"><input type="number" class="form-control" id="totAmount" name="totAmount" value="<c:out value="${viewRecord.totAmount}" />0" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Site Name</div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="siteName" name="siteName" value="<c:out value="${viewRecord.siteName}" />" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Site Address</div>
+					  	<div class="col-md-8"><input type="text" class="form-control" id="siteAddress" name="siteAddress" value="<c:out value="${viewRecord.siteAddress}" />" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Order Date</div>
+					  	<div class="col-md-8"><input type="date" class="form-control" id="orderDate" name="orderDate" value="<c:out value="${viewRecord.orderDate}" />" required></div>
+				  	</div>
+				  	
+				  	<div class="form-row col-md-12 d-flex align-items-center">
+					  	<div class="col-md-4">Delivery Date</div>
+					  	<div class="col-md-8"><input type="date" class="form-control" id="deliveryDate" name="deliveryDate" value="<c:out value="${viewRecord.deliveryDate}" />" required></div>
+				  	</div>
+					  
+			</form>
+			
+			
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- -------------------------------------------------- -->
+	
+	<c:if test="${reqOrderRecord != null}">
+		<script>
+			$(document).ready(function(){
+				$("#approve-modal").modal("show");
+			})
+		</script>
+	</c:if>
+	
+	
+	<c:if test="${reqDeclineOrderRecord != null}">
+		<script>
+			$(document).ready(function(){
+				$("#decline-modal").modal("show");
+			})
+		</script>
+	</c:if>
+	
+	
+	<c:if test="${viewRecord != null}">
+		<script>
+			$(document).ready(function(){
+				$("#view-modal").modal("show");
+			})
+		</script>
+	</c:if>
 	
 
 </body>

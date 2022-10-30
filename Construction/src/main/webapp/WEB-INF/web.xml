@@ -27,6 +27,42 @@
 		<servlet-name>get-order-by-id</servlet-name>
 		<url-pattern>/functions/order/approve-req</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>get-order-by-id-decline</servlet-name>
+		<servlet-class>com.controller.OrderCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>get-order-by-id-decline</servlet-name>
+		<url-pattern>/functions/order/decline-req</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>view-order</servlet-name>
+		<servlet-class>com.controller.OrderCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>view-order</servlet-name>
+		<url-pattern>/functions/order/view-req</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>approve-order</servlet-name>
+		<servlet-class>com.controller.OrderCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>approve-order</servlet-name>
+		<url-pattern>/functions/order/approve</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>decline-order</servlet-name>
+		<servlet-class>com.controller.OrderCtrl</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>decline-order</servlet-name>
+		<url-pattern>/functions/order/decline</url-pattern>
+	</servlet-mapping>
   
   
   
