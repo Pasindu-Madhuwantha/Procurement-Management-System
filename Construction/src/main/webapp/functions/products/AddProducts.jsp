@@ -36,10 +36,10 @@
 <body>
 	<!-- Header -->
 	<div class="p-2 container-fluid theme-bg-color" style="margin-left:-8%;">
-		<div class="container"">
+		<div class="container">
 			<div class="row" >
 			<div class="col-12 col-sm-2" >
-				<img src="../../resources/header_images/uptrend_logo.png" class="img-fluid">
+				<h4 style="color:white;">Construction C</h4>
 			</div>
 
 			<div class="col-12 col-sm-3 d-flex align-items-center justify-content-center home-btn-parent">
@@ -74,17 +74,17 @@
 							<i class="bi bi-speedometer"></i>
 							Dashboard
 						</div>
-						<div onclick="location.href='Analytics.jsp'">
+						<div onclick="location.href='AddProducts.jsp'">
 							<i class="bi bi-pie-chart-fill"></i>
-							Analytics
+					          Products
 						</div>
 						<div onclick="location.href='Report.jsp'">
 							<i class="bi bi-file-earmark-spreadsheet-fill"></i>
-							Report
+							  Suppliers
 						</div>
 						<div onclick="location.href='Bin.jsp'">
 							<i class="bi bi-trash-fill"></i>
-							Bin
+							Orders
 						</div>	
 					</div>
 				</div>
@@ -111,11 +111,11 @@
 				<div class="form-row">
 					<div class="form-group col-md-6">
 					  <label for="inputEmail4">Supplier Name</label>
-					  <input type="text" name="suppliername" class="form-control" id="inputEmail4" placeholder="Product Name" required>
+					  <input type="text" name="suppliername" class="form-control" id="inputEmail4" placeholder="Supplier Name" required>
 					</div>
 					<div class="form-group col-md-6">
 						<label for="inputEmail4">Supplier Mobile</label>
-						<input type="tel"  name="mobile" class="form-control" id="inputEmail4" placeholder="Product Name" pattern="^\d{10}$" required>
+						<input type="tel"  name="mobile" class="form-control" id="inputEmail4" placeholder="Supplier Mobile" pattern="^\d{10}$" required>
 					  </div>
 					</div>
 					
@@ -147,7 +147,20 @@
 		
 
 
-	
+
+					</div>
+				</div>
+
+
+
+
+
+	<!-- Footer -->
+	<div
+		class="p-4 container-fluid theme-bg-color d-flex justify-content-center align-items-center">
+		<div class="footer-title text-center">Copyright@2022 C Construction -
+			All Rights Reserved</div>
+	</div>
 </body>
 
 	

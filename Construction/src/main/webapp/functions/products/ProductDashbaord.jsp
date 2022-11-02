@@ -49,8 +49,8 @@
 		<div class="container"">
 			<div class="row">
 				<div class="col-12 col-sm-2">
-					<img src="../../resources/header_images/uptrend_logo.png"
-						class="img-fluid">
+									<h4 style="color:white;">Construction C</h4>
+					
 				</div>
 
 				<div
@@ -89,11 +89,11 @@
 						<div onclick="location.href='#Dashboard'">
 							<i class="bi bi-speedometer"></i> Dashboard
 						</div>
-						<div onclick="location.href='Analytics.jsp'">
+						<div onclick="location.href='ProductDashbaord.jsp'">
 							<i class="bi bi-pie-chart-fill"></i> Products
 						</div>
 						<div onclick="location.href='Report.jsp'">
-							<i class="bi bi-file-earmark-spreadsheet-fill"></i> Supplier
+							<i class="bi bi-file-earmark-spreadsheet-fill"></i> Suppliers
 						</div>
 						<div onclick="location.href='Bin.jsp'">
 							<i class="bi bi-trash-fill"></i> Orders
@@ -102,16 +102,27 @@
 				</div>
 
 			</div>
+			
+			
 					<div class="col-12 col-sm-12 col-md-10">
 				<div class="dashboard-body-title">
 					Products Dashboard
-					<h5 style="margin-left:70% ;margin-top: -4%;"><button type="submit" onclick="location.href='AddProducts.jsp';" class="btn btn-success">Add Products</button>
+					<h5 style="margin-left:40% ;margin-top: -4%;"><button type="submit" onclick="location.href='AddProducts.jsp';" class="btn btn-success">Add Products</button>
+					
+					<a href="Report.jsp" class="btn btn-warning" style="width: 120px; margin-left:40%;">
+		Report &nbsp <i class="fa fa-server"></i>
+	</a>
+	
+	
+	<a href="Analytics.jsp" class="btn btn-info" style="width: 120px; margin-left: 30%;margin-top:-11% ">
+		Analytics &nbsp <i class="fas fa-chart-bar" aria-hidden="true"></i>
 
+	</a>
+					
 
 				</div>
 
-		
-
+	
 				<div class="dashboard-body-content">
 
 					<div class="table">
@@ -159,8 +170,8 @@
 									<td><%=p1.getSupplier()%></td>
 									<td>0<%=p1.getMobile()%></td>
 									<td><%=p1.getQuantity()%></td>
-									<td><%=p1.getPrice()%></td>
-									<td><%=p1.getSubTotal()%></td>
+									<td><%=p1.getPrice()%>0</td>
+									<td><%=p1.getSubTotal()%>0</td>
 									<td><%=p1.getDate()%></td>
 									
 
@@ -188,7 +199,7 @@
 													<p class="font-weight-bold mb-2" style="font-size: 20px">
 														Are you sure you wanna delete this ?</p>
 													<p class="text-muted " style="font-size: 20px">Record
-														Will Move to Bin!!!</p>
+														Record Will Be Permanently Deleted!!!</p>
 												</div>
 												<div class="card-body px-sm-4 mb-2 pt-1 pb-0">
 													<div class="row justify-content-end no-gutters">
@@ -378,15 +389,14 @@ document.getElementById(
 		</div>
 	</div>
 
-<div><button style="margin-left:25%;margin-top:-20% " type="submit" onclick="location.href='AddProducts.jsp';" class="btn btn-warning">View Analytics</button>
-</div>
+
 
 
 
 	<!-- Footer -->
 	<div
 		class="p-4 container-fluid theme-bg-color d-flex justify-content-center align-items-center">
-		<div class="footer-title text-center">Copyright@2022 Uptrend -
+		<div class="footer-title text-center">Copyright@2022 C Construction -
 			All Rights Reserved</div>
 	</div>
 </body>

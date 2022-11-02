@@ -12,12 +12,27 @@ public class products {
 	double price;
 	double SubTotal;
 	Date date;
+	int TotalQuantity;
+	int count;
+
 	
 	public int getId() {
 		return id;
 	}
 	public String getProductName() {
 		return productName;
+	}
+	public int getTotalQuantity() {
+		return TotalQuantity;
+	}
+	public void setTotalQuantity(int totalQuantity) {
+		TotalQuantity = totalQuantity;
+	}
+	public int getCount() {
+		return count;
+	}
+	public void setCount(int count) {
+		this.count = count;
 	}
 	public void setProductName(String productName) {
 		this.productName = productName;

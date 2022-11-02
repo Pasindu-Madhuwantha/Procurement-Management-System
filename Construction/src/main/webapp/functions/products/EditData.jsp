@@ -118,7 +118,7 @@ for(products p1:allSuppliers)
 				style="left: 3%;">Unit Price(Rs.)</label>
 			<div class="col-sm-10">
 				<input type="number" class="form-control" id="inputEmail3"
-					value='<%=p1.getPrice()%>' style="width: 50%;" name="UnitPrice" min="0">
+					value='<%=p1.getPrice()%>' style="width: 50%;" name="UnitPrice" min="0" step='0.01' value='0.00' placeholder='0.00'>
 			</div>
 		</div>
 	
